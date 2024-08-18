@@ -1,18 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_clone/screen/login/login.dart';
+import 'package:instagram_clone/app_theme_data.dart';
+import 'package:instagram_clone/screen/login_screen/screen.dart';
 
 void main() {
-  runApp(const OurInstagramClone());
+  runApp(const InstagramClone());
 }
 
-class OurInstagramClone extends StatelessWidget {
-  const OurInstagramClone({super.key});
+class InstagramClone extends StatelessWidget {
+  const InstagramClone({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: LoginScreen());
+        home: const LoginScreen(),
+        theme: AppThemeData().light(),
+        darkTheme: AppThemeData().dark(),
+        themeMode: ThemeMode.light,
+        title: 'Instagram Clone',
+    );
   }
 }
 
