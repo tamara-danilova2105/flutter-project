@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:instagram_clone/components/text_input_field.dart';
+import 'package:instagram_clone/screen/auth_screens/components/auth_screen_padding.dart';
 
-const getValueHeight = 12.0;
+import '../constants.dart';
+
+
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen ({super.key});
@@ -23,17 +26,16 @@ class LoginScreen extends StatelessWidget {
                 )
               ),
               Flexible(
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 12.0),
+                  child: AuthScreenPadding(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Column(
                           children: [
                             const TextInputField(label: 'Username or email'),
-                            const SizedBox(height: getValueHeight),
+                            const SizedBox(height: authFormGapValue),
                             const TextInputField(label: 'Password'),
-                            const SizedBox(height: getValueHeight),
+                            const SizedBox(height: authFormGapValue),
                             SizedBox(
                               width: double.infinity,
                               child: FilledButton(
@@ -50,7 +52,7 @@ class LoginScreen extends StatelessWidget {
                         Column(
                           children: [
                             OutlinedButton(
-                                onPressed: () => 'Create new account',
+                                onPressed: () => Navigator.pushNamed(context, '/signup'),
                                 child: const Text('Create new account')
                             ),
                             TextButton(
