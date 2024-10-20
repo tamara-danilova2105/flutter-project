@@ -19,7 +19,7 @@ class InstagramClone extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: AppThemeData().light(),
         darkTheme: AppThemeData().dark(),
-        themeMode: ThemeMode.light,
+        themeMode: ThemeMode.dark,
         title: 'Instagram Clone',
         routes: {
           '/login': (context) => const LoginScreen(),

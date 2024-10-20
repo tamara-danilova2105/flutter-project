@@ -28,36 +28,50 @@ class ScreenStep extends StatelessWidget {
     return AuthScreenPadding(
       child: Center(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const SizedBox(height: 24.0,),
-            Text(headerText,
-              style: const TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 18.0,
-              ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const SizedBox(height: 24.0,),
+                Text(headerText,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18.0,
+                  ),
+                ),
+                const SizedBox(height: authFormGapValue),
+                Text(description,
+                    style: Theme.of(context).brightness ==
+                        Brightness.dark
+                        ? const TextStyle(color: Colors.white54)
+                        : const TextStyle(color: Colors.black54)
+                ),
+                const SizedBox(height: authFormGapValue),
+                TextInputField(label: inputLabel),
+                const SizedBox(height: authFormGapValue),
+                SizedBox(
+                  width: double.infinity,
+                  child: FilledButton(
+                      onPressed: onNextButtonPressed,
+                      child: const Text('Next')
+                  ),
+                ),
+                const SizedBox(height: authFormGapValue),
+                if (emailConfirmationStep == true)
+                SizedBox(
+                  width: double.infinity,
+                  child: OutlinedButton(
+                      onPressed: () => onResendConfirmationCodeButtonPressed,
+                      child: const Text("Didn't get the code?")
+                  ),
+                ),
+              ],
             ),
-            const SizedBox(height: authFormGapValue),
-            Text(description),
-            const SizedBox(height: authFormGapValue),
-            TextInputField(label: inputLabel),
-            const SizedBox(height: authFormGapValue),
-            SizedBox(
-              width: double.infinity,
-              child: FilledButton(
-                  onPressed: () => onNextButtonPressed,
-                  child: const Text('Next')
-              ),
-            ),
-            const SizedBox(height: authFormGapValue),
-            if (emailConfirmationStep == true)
-            SizedBox(
-              width: double.infinity,
-              child: OutlinedButton(
-                  onPressed: () => onResendConfirmationCodeButtonPressed,
-                  child: const Text("Didn't get the code?")
-              ),
-            ),
+            TextButton(
+                onPressed: () => Navigator.popAndPushNamed(context, '/login'),
+                child: const Text("Already have an account? Login")
+            )
           ],
         ),
       ),

@@ -12,6 +12,7 @@ class EmailConfirmationScreen extends StatelessWidget {
             headerText: "Enter the confirmation code",
             description: "To confirm your account, enter 6 digits we sent to emal@instagram.clone.com.",
             inputLabel: "Confirmation code",
+            emailConfirmationStep: true,
             onNextButtonPressed: () => Navigator.pushNamed(context, '/create-password'),
           )
       ),

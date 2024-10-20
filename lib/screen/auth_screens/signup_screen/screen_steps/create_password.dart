@@ -12,8 +12,7 @@ class CreatePasswordScreen extends StatelessWidget {
             headerText: "Create a password",
             description: "Create a password with at least 7 letters or numbers. It should be something other can't guess.",
             inputLabel: "Password",
-            emailConfirmationStep: true,
-            onNextButtonPressed: () => Navigator.pushNamed(context, '/signup-email-confirmation'),
+            onNextButtonPressed: () => print("CALL API"),
           )
       ),
     );
