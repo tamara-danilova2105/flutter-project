@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_clone/screen/auth_screens/signup_screen/email_input_screen.dart';
+import 'package:instagram_clone/screen/auth_screens/signup_screen/screen_steps/email_input.dart';
 
 class SignupScreen extends StatelessWidget {
   const SignupScreen ({super.key});

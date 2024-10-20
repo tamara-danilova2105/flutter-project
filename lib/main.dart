@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/app_theme_data.dart';
 import 'package:instagram_clone/screen/auth_screens/login_screen/screen.dart';
-import 'package:instagram_clone/screen/auth_screens/signup_screen/create_password_screen.dart';
-import 'package:instagram_clone/screen/auth_screens/signup_screen/email_confirmation_screen.dart';
-import 'package:instagram_clone/screen/auth_screens/signup_screen/email_input_screen.dart';
+import 'package:instagram_clone/screen/auth_screens/signup_screen/screen_steps/create_password.dart';
+import 'package:instagram_clone/screen/auth_screens/signup_screen/screen_steps/email_confirmation.dart';
+import 'package:instagram_clone/screen/auth_screens/signup_screen/screen_steps/email_input.dart';
 import 'package:instagram_clone/screen/auth_screens/signup_screen/screen.dart';
 
 void main() {
